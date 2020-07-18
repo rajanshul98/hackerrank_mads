@@ -1,4 +1,5 @@
-//Question Link - https://www.hackerrank.com/challenges/2d-array/problemimport java.io.*;
+//Question Link - https://www.hackerrank.com/challenges/2d-array/problem
+import java.io.*;
 import java.math.*;
 import java.security.*;
 import java.text.*;
