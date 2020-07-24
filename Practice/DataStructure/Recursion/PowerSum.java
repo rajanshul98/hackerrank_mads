@@ -14,8 +14,9 @@ public class PowerSum{
         powersum += (int)Math.pow(i,N);
         if(powersum == X)
             count++;
-        if((int)Math.pow(i,N) == X)
+        else if(powersum > X)
             return;
+        
         for(int j=i+1;(int)Math.pow(j,N) <= X; j++){
             calculatePowerSum(X, N, j);
             powersum -= (int)Math.pow(j,N);
