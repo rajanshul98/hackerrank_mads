@@ -1,0 +1,33 @@
+
+//Input - 27	9 -51 -20 -13 -51 40 -21 75 -24 29 -86 5 -38 15 48 -87 -9 42 39 64 47 -63 22 -81 -20 -100 28
+//output - 192
+
+import java.io.*;
+
+class KadaneAlgorithm {
+    
+	public static void main (String[] args) throws IOException {
+		   BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		    int n = Integer.parseInt(br.readLine());
+		    int arr[] = new int[n];
+		    String inputLine[] = br.readLine().split(" ");
+		    for(int i=0; i<n; i++){
+		        arr[i] = Integer.parseInt(inputLine[i]);
+		    }
+		    
+		    System.out.println(maxSubarraySum(arr, n));
+	}
+
+
+    public static int maxSubarraySum(int arr[], int n){
+    	int max_ending = arr[0];
+        int max_sum = arr[0];
+
+        for(int i = 1; i < n; i++){
+            max_ending = Math.max(max_ending + arr[i], arr[i]);
+            max_sum = Math.max(max_sum, max_ending);
+        }
+    	return max_sum;
+    } 
+}
+
